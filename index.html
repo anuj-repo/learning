@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table of Contents - Stamina Core Plus</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); 
+            color: white; 
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        h1 { 
+            font-size: 2.5em; 
+            color: #ffd700; 
+            margin-bottom: 10px; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); 
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #00d4aa;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: #aaa;
+            font-style: italic;
+        }
+        
+        .section-badge { 
+            background: linear-gradient(135deg, #ffd700, #ff9800); 
+            color: #1a1a2e; 
+            padding: 8px 20px; 
+            border-radius: 25px; 
+            font-weight: bold; 
+            display: inline-block; 
+            margin-bottom: 20px; 
+        }
+        
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .toc-section {
+            border-radius: 15px;
+            padding: 25px;
+        }
+        
+        .highlight-box { 
+            background: linear-gradient(135deg, rgba(255,215,0,0.2), rgba(255,152,0,0.1)); 
+            border: 2px solid #ffd700; 
+        }
+        
+        .green-box { 
+            background: linear-gradient(135deg, rgba(0,212,170,0.2), rgba(0,150,120,0.1)); 
+            border: 2px solid #00d4aa; 
+        }
+        
+        .orange-box { 
+            background: linear-gradient(135deg, rgba(255,152,0,0.2), rgba(200,100,0,0.1)); 
+            border: 2px solid #ff9800; 
+        }
+        
+        .blue-box { 
+            background: linear-gradient(135deg, rgba(107,107,255,0.2), rgba(50,50,200,0.1)); 
+            border: 2px solid #6b6bff; 
+        }
+        
+        .section-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .highlight-box .section-title { color: #ffd700; }
+        .green-box .section-title { color: #00d4aa; }
+        .orange-box .section-title { color: #ff9800; }
+        .blue-box .section-title { color: #6b6bff; }
+        
+        .toc-list {
+            list-style: none;
+        }
+        
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+        
+        .toc-list a {
+            color: #ddd;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .toc-list a:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            color: #fff;
+        }
+        
+        .toc-number {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            margin-right: 12px;
+            font-weight: bold;
+            font-size: 0.85em;
+            flex-shrink: 0;
+        }
+        
+        .highlight-box .toc-number { background: #ffd700; color: #1a1a2e; }
+        .green-box .toc-number { background: #00d4aa; color: #1a1a2e; }
+        .orange-box .toc-number { background: #ff9800; color: #1a1a2e; }
+        .blue-box .toc-number { background: #6b6bff; color: #fff; }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #ffd700, #ff9800);
+            color: #1a1a2e;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        
+        .cta-box p {
+            font-size: 1.1em;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #1a1a2e;
+            color: #ffd700;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        footer a {
+            color: #00d4aa;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">🌿</div>
+            <h1>STAMINA CORE PLUS</h1>
+            <p class="subtitle">By NUTRITION FOREVER WELLNESS</p>
+            <p class="tagline">"Unlock Your Body's True Potential"</p>
+        </header>
+        
+        <div style="text-align: center;">
+            <span class="section-badge">📋 TABLE OF CONTENTS</span>
+        </div>
+        
+        <div class="toc-grid">
+            <!-- Product & Health Section -->
+            <div class="toc-section highlight-box">
+                <h3 class="section-title">💊 Product & Health (1-7)</h3>
+                <ul class="toc-list">
+                    <li><a href="stamina-core-plus-presentation.html#slide1"><span class="toc-number">1</span> Title Page</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide2"><span class="toc-number">2</span> The Problem</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide3"><span class="toc-number">3</span> The Solution</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide4"><span class="toc-number">4</span> Product Details</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide5"><span class="toc-number">5</span> Ayurvedic Ingredients</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide6"><span class="toc-number">6</span> Global Ingredients</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide7"><span class="toc-number">7</span> Health Benefits</a></li>
+                </ul>
+            </div>
+            
+            <!-- Business Opportunity Section -->
+            <div class="toc-section green-box">
+                <h3 class="section-title">💰 Business Opportunity (8-14)</h3>
+                <ul class="toc-list">
+                    <li><a href="stamina-core-plus-presentation.html#slide8"><span class="toc-number">8</span> Business Opportunity Intro</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide9"><span class="toc-number">9</span> 15-Level Commission Structure</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide10"><span class="toc-number">10</span> Network Growth</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide11"><span class="toc-number">11</span> Full 15-Level Earning Table</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide12"><span class="toc-number">12</span> Repurchase Bonus</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide13"><span class="toc-number">13</span> Income Journey</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide14"><span class="toc-number">14</span> Rank Titles</a></li>
+                </ul>
+            </div>
+            
+            <!-- Rewards Section -->
+            <div class="toc-section orange-box">
+                <h3 class="section-title">🎁 Rewards (15-19)</h3>
+                <ul class="toc-list">
+                    <li><a href="stamina-core-plus-presentation.html#slide15"><span class="toc-number">15</span> Direct Referral Rewards</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide16"><span class="toc-number">16</span> Team Rewards (50-500)</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide17"><span class="toc-number">17</span> Premium Rewards (750-3000)</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide18"><span class="toc-number">18</span> Mega Rewards (5000-25000)</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide19"><span class="toc-number">19</span> Ultimate Rewards (Villa)</a></li>
+                </ul>
+            </div>
+            
+            <!-- Investment & Support Section -->
+            <div class="toc-section blue-box">
+                <h3 class="section-title">📈 Investment & Support (20-30)</h3>
+                <ul class="toc-list">
+                    <li><a href="stamina-core-plus-presentation.html#slide20"><span class="toc-number">20</span> Investment Plan</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide21"><span class="toc-number">21</span> Investment Calculator</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide22"><span class="toc-number">22</span> Insurance Benefits</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide23"><span class="toc-number">23</span> How to Start</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide24"><span class="toc-number">24</span> FAQ</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide25"><span class="toc-number">25</span> Why Choose Us</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide26"><span class="toc-number">26</span> Company Info</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide27"><span class="toc-number">27</span> Legal Disclaimer</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide28"><span class="toc-number">28</span> Contact Us</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide29"><span class="toc-number">29</span> Call to Action</a></li>
+                    <li><a href="stamina-core-plus-presentation.html#slide30"><span class="toc-number">30</span> Thank You</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="cta-box">
+            <h3>🏆 Health + Wealth + Security = Complete Life Solution</h3>
+            <p>💊 120 Capsules | 60 Days Supply | DP Price: ₹2,280</p>
+            <a href="stamina-core-plus-presentation.html" class="cta-button">📖 View Full Presentation</a>
+        </div>
+        
+        <footer>
+            <p>© 2026 <a href="https://www.nutritionforeverwellness.com">Nutrition Forever Wellness</a>. All rights reserved.</p>
+            <p style="margin-top: 10px;">📞 7701863636 | 📧 contact@nutritionforeverwellness.com</p>
+        </footer>
+    </div>
+</body>
+</html>
